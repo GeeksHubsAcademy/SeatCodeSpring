@@ -1,4 +1,4 @@
-package com.javier.academiaseatcode.teachers.infraestructure.persitence.dao;
+package com.javier.academiaseatcode.teachers.infraestructure.persitence;
 
 import com.javier.academiaseatcode.teachers.domain.entities.Teacher;
 

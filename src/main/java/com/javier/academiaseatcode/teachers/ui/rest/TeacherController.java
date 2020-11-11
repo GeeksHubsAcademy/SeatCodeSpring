@@ -1,8 +1,9 @@
 package com.javier.academiaseatcode.teachers.ui.rest;
 
 
+import com.javier.academiaseatcode.teachers.application.service.ITeacherService;
 import com.javier.academiaseatcode.teachers.domain.entities.Teacher;
-import com.javier.academiaseatcode.teachers.infraestructure.persitence.dao.ITeacherDao;
+import com.javier.academiaseatcode.teachers.infraestructure.persitence.ITeacherDao;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class TeacherController {
     private static final org.apache.commons.logging.Log Logger = LogFactory.getLog("TeacherController.class");
 
     @Autowired
-    private ITeacherDao teacherDao;
+    private ITeacherService teacherService;
 
     @RequestMapping(value="", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<Void> home(){
@@ -33,8 +34,8 @@ public class TeacherController {
    public ResponseEntity<Teacher> saveTeacher(@RequestBody Teacher teacher, UriComponentsBuilder builder)
    {
        Logger.debug("Recived object --->"+ teacher);
-       teacherDao.save(teacher);
-       return new ResponseEntity(teacher, HttpStatus.OK);
+        Teacher data = teacherService.saveTeacher(teacher);
+       return new ResponseEntity(data, HttpStatus.OK);
    }
 
 }
