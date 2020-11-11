@@ -19,7 +19,7 @@ public class Teacher  implements Serializable {
 
     @Id
     @Column(name="uuid", length=180, unique=true, nullable=false)
-    private UUID uuid = UUID.randomUUID();
+    private String uuid = UUID.randomUUID().toString();
 
    private String name;
 
@@ -28,7 +28,7 @@ public class Teacher  implements Serializable {
    @NotNull
    @Column(name="created_at")
    @DateTimeFormat(pattern="yyyy-MM-dd")
-   private Date createdAt;
+   private Date createdAt = new Date();
 
     @Column(name="updated_at")
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -39,15 +39,15 @@ public class Teacher  implements Serializable {
         super();
     }
 
-    public Teacher(UUID uuid, String name, String lastname, Date createdAt) {
+    public Teacher(String name, String lastname) {
         super();
-        this.uuid = uuid;
+        this.uuid = uuid.toString();
         this.name = name;
         this.lastname = lastname;
-        this.createdAt = createdAt;
+        this.createdAt = new Date();
     }
 
-    public UUID getUuid() {
+    public String getUuid() {
         return uuid;
     }
 

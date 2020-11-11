@@ -27,10 +27,8 @@ public class TeachersDaoTest {
     {
         UUID uuid = UUID.randomUUID();
         Teacher teacher = new Teacher(
-                uuid,
-                "Xavi",
-                "Rodriguez",
-                new Date()
+               "Xavi",
+                "Rodriguez"
         );
         teacherDao.save(teacher);
         assertThat(teacher.getUuid().toString()).isEqualTo(uuid.toString());
