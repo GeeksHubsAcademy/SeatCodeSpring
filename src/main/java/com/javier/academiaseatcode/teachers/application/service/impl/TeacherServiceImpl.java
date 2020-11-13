@@ -3,7 +3,6 @@ package com.javier.academiaseatcode.teachers.application.service.impl;
 import com.javier.academiaseatcode.teachers.application.service.ITeacherService;
 import com.javier.academiaseatcode.teachers.domain.entities.Teacher;
 import com.javier.academiaseatcode.teachers.domain.repository.ITeacherRepository;
-import com.javier.academiaseatcode.teachers.infraestructure.persitence.ITeacherDao;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

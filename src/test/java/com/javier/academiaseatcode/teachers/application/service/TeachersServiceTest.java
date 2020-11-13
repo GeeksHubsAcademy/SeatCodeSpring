@@ -1,8 +1,7 @@
-package com.javier.academiaseatcode.teachers.infraestructure.persistence.dao;
+package com.javier.academiaseatcode.teachers.application.service;
 
 import com.javier.academiaseatcode.teachers.application.service.ITeacherService;
 import com.javier.academiaseatcode.teachers.domain.entities.Teacher;
-import com.javier.academiaseatcode.teachers.infraestructure.persitence.ITeacherDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,7 +11,7 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-public class TeachersDaoTest {
+public class TeachersServiceTest {
     @Autowired
     private ITeacherService teacherService;
 

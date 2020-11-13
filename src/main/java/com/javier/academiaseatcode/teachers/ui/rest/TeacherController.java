@@ -3,7 +3,6 @@ package com.javier.academiaseatcode.teachers.ui.rest;
 
 import com.javier.academiaseatcode.teachers.application.service.ITeacherService;
 import com.javier.academiaseatcode.teachers.domain.entities.Teacher;
-import com.javier.academiaseatcode.teachers.infraestructure.persitence.ITeacherDao;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
