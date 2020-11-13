@@ -30,8 +30,7 @@ public class TeacherController {
 
 
     @RequestMapping(value="", method=RequestMethod.POST, produces="application/json")
-   public ResponseEntity<Teacher> saveTeacher(@RequestBody Teacher teacher, UriComponentsBuilder builder)
-   {
+   public ResponseEntity<Teacher> saveTeacher(@RequestBody Teacher teacher, UriComponentsBuilder builder) throws Exception {
        Logger.debug("Recived object --->"+ teacher);
         Teacher data = teacherService.saveTeacher(teacher);
        return new ResponseEntity(data, HttpStatus.OK);

@@ -22,13 +22,12 @@ public class TeachersServiceTest {
     }
 
     @Test
-    public void ShouldAddInBDTeacherWhenSave()
-    {
+    public void ShouldAddInBDTeacherWhenSave() throws Exception {
         UUID uuid = UUID.randomUUID();
         Teacher teacher = new Teacher(
                "Xavi",
                 "Rodriguez",
-                "123456X"
+                "12345678X"
         );
        Teacher data =  teacherService.saveTeacher(teacher);
         assertThat(teacher.getUuid().toString()).isEqualTo(data.getUuid());

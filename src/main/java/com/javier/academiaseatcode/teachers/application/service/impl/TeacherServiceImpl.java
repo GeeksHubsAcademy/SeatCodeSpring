@@ -1,5 +1,6 @@
 package com.javier.academiaseatcode.teachers.application.service.impl;
 
+import com.javier.academiaseatcode.common.application.service.IDniService;
 import com.javier.academiaseatcode.teachers.application.service.ITeacherService;
 import com.javier.academiaseatcode.teachers.domain.entities.Teacher;
 import com.javier.academiaseatcode.teachers.domain.repository.ITeacherRepository;
@@ -14,9 +15,18 @@ public class TeacherServiceImpl  implements ITeacherService {
 
     @Autowired
     private ITeacherRepository teacherRepository;
+    @Autowired
+    private IDniService dniService;
 
     @Override
-    public Teacher saveTeacher(Teacher teacher) {
-       return teacherRepository.save(teacher);
+    public Teacher saveTeacher(Teacher teacher) throws Exception {
+
+      if (this.dniService.checkDni(teacher.getDni())){
+          return teacherRepository.save(teacher);
+      } else{
+          throw new Exception("Dni is fail");
+      }
+
+
     }
 }
