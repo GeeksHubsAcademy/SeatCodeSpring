@@ -25,6 +25,8 @@ public class Teacher  implements Serializable {
 
    private String lastname;
 
+   private String dni;
+
    @NotNull
    @Column(name="created_at")
    @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -39,10 +41,11 @@ public class Teacher  implements Serializable {
         super();
     }
 
-    public Teacher(String name, String lastname) {
+    public Teacher(String name, String lastname, String dni) {
         super();
         this.uuid = uuid.toString();
         this.name = name;
+        this.dni = dni;
         this.lastname = lastname;
         this.createdAt = new Date();
     }
@@ -54,6 +57,8 @@ public class Teacher  implements Serializable {
     public String getName() {
         return name;
     }
+
+    public String getDni() { return dni; }
 
     public String getLastname() {
         return lastname;

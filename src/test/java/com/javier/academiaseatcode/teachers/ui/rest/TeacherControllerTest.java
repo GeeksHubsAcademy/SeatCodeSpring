@@ -49,7 +49,7 @@ public class TeacherControllerTest {
 
     @Test
     public void ShouldSameNameToCreateTeacher() throws Exception {
-        Teacher teacher = new Teacher("Prueba", "Prueba");
+        Teacher teacher = new Teacher("Prueba", "Prueba", "123456X");
         mvc.perform(post("/teachers")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(this.toJson(teacher)))

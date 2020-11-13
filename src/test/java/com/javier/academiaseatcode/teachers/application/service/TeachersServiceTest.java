@@ -27,7 +27,8 @@ public class TeachersServiceTest {
         UUID uuid = UUID.randomUUID();
         Teacher teacher = new Teacher(
                "Xavi",
-                "Rodriguez"
+                "Rodriguez",
+                "123456X"
         );
        Teacher data =  teacherService.saveTeacher(teacher);
         assertThat(teacher.getUuid().toString()).isEqualTo(data.getUuid());
